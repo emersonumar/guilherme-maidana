@@ -284,6 +284,9 @@ p { margin: 0; }
 .sobre-fotos img { border-radius: var(--r-img); width: 100%; filter: saturate(.94) contrast(1.02); }
 .sobre-fotos img:first-child { grid-column: 1 / -1; aspect-ratio: 4/3; object-fit: cover; box-shadow: 0 40px 80px -50px color-mix(in srgb, var(--ink) 50%, transparent); }
 .sobre-fotos img:not(:first-child) { aspect-ratio: 1; object-fit: cover; }
+/* foto única (só o profissional): retrato, ocupando a coluna inteira */
+.sobre-fotos:has(img:only-of-type) { grid-template-columns: 1fr; }
+.sobre-fotos img:only-of-type { aspect-ratio: 4/4.6; }
 .selo {
   position: absolute; right: -14px; top: -22px; width: 118px; height: 118px; border-radius: 50%;
   background: var(--escuro); color: var(--ground); display: grid; place-content: center; text-align: center;
@@ -696,8 +699,6 @@ p { margin: 0; }
     <div class="container sobre-grid">
       <div class="sobre-fotos reveal">
         <img src="img/gmb1.jpg" alt="Dr. Guilherme Maidana">
-        <img src="img/caso1.jpg" alt="Dr. Guilherme Maidana" loading="lazy">
-        <img src="img/caso6.jpg" alt="Dr. Guilherme Maidana" loading="lazy">
         <div class="selo"><b>5,0</b><span>no Google</span></div>
       </div>
       <div class="sobre-txt reveal">
