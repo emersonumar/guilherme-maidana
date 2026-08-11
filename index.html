@@ -58,7 +58,7 @@
   --container: 1240px;
   --ease: cubic-bezier(.16, 1, .3, 1);
 }
-
+:root{--ground-2:color-mix(in srgb, #e9cfac 45%, #fffdfa);--ground-3:color-mix(in srgb, #e9cfac 78%, #fffdfa)}
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 96px; }
@@ -261,6 +261,9 @@ p { margin: 0; }
 /* embed do Instagram vem com cabeçalho e rodapé próprios: altura fixa, não proporção */
 .video-wrap.vertical iframe { aspect-ratio: auto; height: 700px; background: var(--ground); }
 .video-legenda { color: color-mix(in srgb, var(--ground) 55%, transparent); }
+/* vídeo fora da seção escura (ex.: tour do consultório na galeria) */
+.video-wrap.solto { position: static; max-width: 420px; margin: clamp(28px, 4vw, 44px) auto 0; }
+.video-wrap.solto .video-legenda { color: var(--ink-55); }
 
 @media (max-width: 900px) {
   .tec-layout { grid-template-columns: 1fr; }
@@ -693,8 +696,8 @@ p { margin: 0; }
     <div class="container sobre-grid">
       <div class="sobre-fotos reveal">
         <img src="img/gmb1.jpg" alt="Dr. Guilherme Maidana">
-        <img src="img/gmb2.jpg" alt="Dr. Guilherme Maidana" loading="lazy">
-        <img src="img/gmb3.jpg" alt="Dr. Guilherme Maidana" loading="lazy">
+        <img src="img/caso1.jpg" alt="Dr. Guilherme Maidana" loading="lazy">
+        <img src="img/caso6.jpg" alt="Dr. Guilherme Maidana" loading="lazy">
         <div class="selo"><b>5,0</b><span>no Google</span></div>
       </div>
       <div class="sobre-txt reveal">
@@ -786,17 +789,24 @@ Da avaliação ao acompanhamento, cada etapa é explicada com clareza, permitind
   <section id="galeria">
     <div class="container">
       <div class="section-head center reveal">
-        <span class="eyebrow">Galeria</span>
-        <h2>Conheça a clínica</h2>
+        <span class="eyebrow">Resultados</span>
+        <h2>Sorrisos que saíram daqui</h2>
         <p>Clique nas fotos para ampliar.</p>
       </div>
       <div class="mosaico reveal">
-        <button type="button" aria-label="Ampliar foto 1"><img src="img/gmb0.jpg" alt="Dr. Guilherme Maidana — foto 1" loading="lazy"></button>
-        <button type="button" aria-label="Ampliar foto 2"><img src="img/gmb1.jpg" alt="Dr. Guilherme Maidana — foto 2" loading="lazy"></button>
-        <button type="button" aria-label="Ampliar foto 3"><img src="img/gmb2.jpg" alt="Dr. Guilherme Maidana — foto 3" loading="lazy"></button>
-        <button type="button" aria-label="Ampliar foto 4"><img src="img/gmb3.jpg" alt="Dr. Guilherme Maidana — foto 4" loading="lazy"></button>
-        <button type="button" aria-label="Ampliar foto 5"><img src="img/gmb4.jpg" alt="Dr. Guilherme Maidana — foto 5" loading="lazy"></button>
-        <button type="button" aria-label="Ampliar foto 6"><img src="img/gmb5.jpg" alt="Dr. Guilherme Maidana — foto 6" loading="lazy"></button>
+        <button type="button" aria-label="Ampliar foto 1"><img src="img/caso4.jpg" alt="Dr. Guilherme Maidana — foto 1" loading="lazy"></button>
+        <button type="button" aria-label="Ampliar foto 2"><img src="img/caso3.jpg" alt="Dr. Guilherme Maidana — foto 2" loading="lazy"></button>
+        <button type="button" aria-label="Ampliar foto 3"><img src="img/caso5.jpg" alt="Dr. Guilherme Maidana — foto 3" loading="lazy"></button>
+        <button type="button" aria-label="Ampliar foto 4"><img src="img/caso2.jpg" alt="Dr. Guilherme Maidana — foto 4" loading="lazy"></button>
+        <button type="button" aria-label="Ampliar foto 5"><img src="img/caso7.jpg" alt="Dr. Guilherme Maidana — foto 5" loading="lazy"></button>
+        <button type="button" aria-label="Ampliar foto 6"><img src="img/caso1.jpg" alt="Dr. Guilherme Maidana — foto 6" loading="lazy"></button>
+      </div>
+      <div class="video-wrap vertical solto reveal">
+        <div class="player" data-auto>
+          <video muted loop playsinline preload="none" poster="img/capa-sala.jpg"><source src="img/sala.mp4" type="video/mp4"></video>
+          <button class="som" type="button" aria-label="Ligar o som"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6.5 9H3v6h3.5L11 19V5Z"/><path d="M16 9.5l4.5 5M20.5 9.5l-4.5 5"/></svg><span>ligar som</span></button>
+        </div>
+        <p class="video-legenda">Conheça o consultório.</p>
       </div>
     </div>
   </section>
